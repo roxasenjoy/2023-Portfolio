@@ -8,7 +8,7 @@
 <template>
     
   <Header></Header>
-  <Presentation></Presentation>
+  
     
 </template>
 

@@ -8,7 +8,7 @@
     
     <section>
         <div class="left">
-            <h1>Développeur Web <br>& Formateur à Caen</h1>
+            <h1>Développeur Web & Formateur à Caen</h1>
             <p> Lorem ipsum dolor sit amet, consectetur 
                 adipiscing elit. Pellentesque sit amet metus 
                 ut sapien luctus accumsan eu ac enim.
@@ -29,15 +29,12 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
     height: 70vh;
 }
 
 section .left{
-    width: 55%;
     margin: 0 50px 0 0;
-}
-section .right{
-    width: 45%;
 }
 
 section .left h1{
@@ -78,11 +75,15 @@ section .left a:before{
 
 /** Tablette **/
 @media screen and (max-width: 1024px)  {
-    
+    section{
+        flex-direction: column;
+        height: initial;
+    }
 }
 
 /** Tablette **/
 @media screen and (max-width: 768px)  {
+    
 }
 
 </style>

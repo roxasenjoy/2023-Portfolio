@@ -8,10 +8,7 @@
 <style scoped>
 
 img{
-    width: 100%;
     max-width: 500px;
-    height: 500px;
-    max-height: 500px;
 }
 
 
