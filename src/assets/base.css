@@ -34,9 +34,6 @@ body{
 }
 
 body #app{
-  /* background-color: red; */
-  max-width: 100%;
-  width: 75%;
   margin: auto;
   color: var(--white);
   font-family: var(--normal);
@@ -50,10 +47,6 @@ body #app{
 
 /** Tablette **/
 @media screen and (max-width: 1300px)  {
-  body #app{
-    /* background-color: red; */
-    width: 95%;
-  }
 }
 
 /** Tablette **/

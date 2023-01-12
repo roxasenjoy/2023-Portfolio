@@ -12,8 +12,12 @@
         },
 
         methods: {
-            displayMenu() {
-                this.showMenu = !this.showMenu;
+            displayMenu(type: string) {
+
+                if(type === 'menu' || (this.showMenu && type === 'item')){
+                    this.showMenu = !this.showMenu;
+                }
+                
             }
         }
     }
@@ -36,14 +40,27 @@
             <a href="" class="transition contact">Un projet ?</a>
         </div>
 
-        <!-- Menu portable -->
-        <div class="hamburgerMenuContainer" @click="displayMenu()" :class="{ active: showMenu }">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-            
+        <!-- Icone hamburger -->
+        <div class="hamburgerMenuContainer" @click="displayMenu('menu')" :class="{ active: showMenu }">
+            <span id="hamburger1"></span>
+            <span id="hamburger2"></span>
+            <span id="hamburger3"></span>
+        </div>    
     </header>
+
+    <div class="nav" :class="{ active: showMenu }">
+        <div class="nav__content">
+            <ul class="nav__list">
+                <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Services</li></a>
+                <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Portfolio</li></a>
+                <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Tarifs</li></a>
+                <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Fonctionnement</li></a>
+                <a href="#"><li class="nav__list-item contact" @click="displayMenu('item')">Un projet ?</li></a>
+            </ul>
+        </div>
+    </div>
+
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>v
 </template>
   
 <style>
@@ -53,6 +70,9 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 100%;
+    width: 75%;
+    margin: auto;
 }
 
 header h1{
@@ -73,10 +93,6 @@ header div{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.hamburgerMenuContainer.active::before{
-    
 }
 
 .hamburgerMenuContainer{
@@ -102,7 +118,8 @@ header nav ul li{
     justify-content: center;
 }
 
-header .contact{
+header .contact,
+.nav .contact{
     text-decoration: none;
     font-family: var(--bold);
     font-weight: 900;
@@ -115,11 +132,13 @@ header .contact{
     overflow: hidden;
 }
 
-header .contact:hover{
+header .contact:hover,
+.nav .contact:hover{
     color: var(--blue);
 }
 
- header .contact:after {
+header .contact:after,
+.nav .contact:after {
     content: '';
     width: 500px;
     height: 500px;
@@ -135,15 +154,147 @@ header .contact:hover{
     transform: translateX(-100%) translateY(0%) rotate(45deg);
 }
 
-header a:hover:after{
+header a:hover:after,
+.nav a:hover:after{
     -webkit-transform: translateX(-2%) translateY(-30%) rotate(45deg);
     transform: translateX(-2%) translateY(-30%) rotate(45deg);
 } 
+
+.nav {
+    display: none;
+}
 
 
 
 /** Tablette **/
 @media screen and (max-width: 1024px)  {
+
+    header{
+        max-width: 100%;
+        width:90%;
+    }
+ 
+    .nav {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        display: initial;
+    }
+    .nav:before, .nav:after {
+        content: "";
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(234, 234, 234, 0.2);
+        z-index: -1;
+        transition: transform cubic-bezier(0.77, 0, 0.175, 1) 0.8s;
+        transform: translateX(0%) translateY(-100%);
+    }
+    .nav:after {
+        background: var(--white);
+        transition-delay: 0s;
+    }
+    .nav:before {
+        transition-delay: 0.1s;
+    }
+
+    .nav.active{
+        display: initial;
+    }
+
+     .nav__content {
+        position: fixed;
+        top: 50%;
+        transform: translate(0%, -50%);
+        width: 100%;
+        text-align: center;
+        font-size: 36px;
+    }
+
+    .nav__list-item.contact{
+        color: var(--yellow);
+        font-size: 36px;
+    }
+
+    .nav__list{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .nav__list-item {
+        position: relative;
+        display: inline-block;
+        transition-delay: 0.8s;
+        opacity: 0;
+        color: var(--blue);
+        transform: translate(0%, 100%);
+        transition: opacity 0.2s ease, transform 0.3s ease;
+        margin: 25px 0;
+        transform: scale(1);
+    }
+    .nav__list-item:after {
+        background-color: currentColor;
+        width: 30px;
+        height: 1px;
+        margin: 0 auto;
+        left: 0;
+        background-color: black;
+        right: 0;
+        top:100%;
+        transform: scaleX(0);
+        transition: all .2s ease;
+        position: absolute;
+        content: '';
+    }
+
+    .nav__list-item:hover:afters{
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    
+    /**
+        Menu ouvert
+    */
+    .nav.active {
+        visibility: visible;
+    }
+
+    .nav a{
+        cursor: default;
+    }
+
+    .nav.active{
+        cursor: pointer;
+    }
+
+    .nav.active:before, .nav.active:after {
+        transform: translateX(0%) translateY(0%);
+    }
+
+    .nav.active .nav__list-item {
+        opacity: 1;
+        transform: translateX(0%);
+        transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    }
+
+    /** Affichage smooth de tous les éléments de la navigation */
+    .nav.active .nav__list-item:nth-child(0) {
+        transition-delay: 0.5s;
+    }
+    .nav.active .nav__list-item:nth-child(1) {
+        transition-delay: 0.6s;
+    }
+    .nav.active .nav__list-item:nth-child(2) {
+        transition-delay: 0.7s;
+    }
+    .nav.active .nav__list-item:nth-child(3) {
+        transition-delay: 0.8s;
+    }
+    .nav.active .nav__list-item:nth-child(4) {
+        transition-delay: 0.9s;
+    } 
 
     .computerMenu{
         display: none;
@@ -152,21 +303,27 @@ header a:hover:after{
     .hamburgerMenuContainer{
         display: initial;
         position: relative;
-        /* background-color: red; */
-        left: -15px;
+        position: fixed;
+        z-index: 5;
+        right: 35px;
     }
 
     .hamburgerMenuContainer::before{
         content: '';
         position:absolute;
-        width:30px;
-        height:30px;
+        width:50px;
+        height:50px;
         border: solid var(--white) 1px;
         rotate: 45deg;
-        top: -9px;
-        left: -10px;
+        top: -16px;
+        left: -16px;
         transition: 0.25s ease-in-out;
         cursor: pointer;
+        z-index: 9999;
+    }
+
+    .hamburgerMenuContainer.active::before{
+        border-color: var(--blue);
     }
     
 
@@ -183,18 +340,49 @@ header a:hover:after{
 
     .hamburgerMenuContainer span
     {
+        opacity: 1;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .25s ease-in-out;
+        -moz-transition: .25s ease-in-out;
+        -o-transition: .25s ease-in-out;
         transition: 0.25s ease-in-out;
         display: block;
-        width: 20px;
-        height: 1px;
+        width: 30px;
+        height: 2px;
         margin-bottom: 5px;
         position: relative;
-        left: -5px;
+        left: -6.5px;
         background: var(--white);
-        z-index: 1;
+        z-index: 9999;
         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                     background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                     opacity 0.55s ease;
+    }
+
+    .hamburgerMenuContainer.active #hamburger1{
+        /* background-color: red; */ 
+        transition: 0.25s ease;
+        transform: translateX(4px) translateY(-1px) rotate(45deg);
+    }
+
+    .hamburgerMenuContainer.active #hamburger2{
+        background-color: transparent;
+        transform: translateX(10px);
+        transition: 0.25s ease;
+    }
+
+    .hamburgerMenuContainer.active #hamburger3{
+        /* background-color: green; */
+        transition: 0.25s ease;
+        transform: translateY(-6px) rotate(-45deg) translateX(-2px);
+    }
+    
+
+    .hamburgerMenuContainer.active span{
+        background: var(--blue);
     }
 
     .hamburgerMenuContainer span:last-child{
@@ -214,19 +402,7 @@ header a:hover:after{
 
 /** Tablette **/
 @media screen and (max-width: 768px)  {
-    header h1{
-        font-size: 20px;
-    }
-
-    header h1 span{
-        font-size: 21px;
-    }
-
-    header .contact{
-        font-size: 20px;
-        padding: 10px 30px;
-        border-radius: 10px;
-    }
+    
 }
 
 </style>
