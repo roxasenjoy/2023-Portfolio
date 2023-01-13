@@ -12,33 +12,37 @@
         },
 
         mounted() {
-            this.vueOnScroll();
+            this.cancelScroll();
         },
 
         methods: {
 
-            vueOnScroll() {
-                var prev = window.pageYOffset;
-                const refs: any = this.$refs.headRef; // assign the reference in variable
-
-                window.addEventListener("scroll", () => {
-                var curr = window.pageYOffset;
-
-                if (curr > 0 && curr < 100) {
-                    refs.classList.remove("AlreadyToTheTop");
-                    refs.classList.remove("scrolling");
-                } else if(curr >= 100){
-                    refs.classList.add("scrolling");
-                    refs.classList.remove("AlreadyToTheTop");
+            cancelScroll() {
+                if(this.showMenu){
+                    const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
+                    const body = document.body;
+                    body.style.height = '100vh';
+                    body.style.overflowY = 'hidden';
+                } else {
+                    const body = document.body;
+                    const scrollY = body.style.top;
+                    body.style.position = '';
+                    body.style.top = '';
+                    body.style.height = '';
+                    body.style.overflowY = '';
+                    window.scrollTo(0, parseInt(scrollY || '0') * -1);
                 }
-                    prev = curr;
-                });
+
+                window.addEventListener('scroll', () => {
+                        document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
+                    });
             },
 
             displayMenu(type: string) {
 
                 if(type === 'menu' ||  ( this.showMenu && type === 'item')){
                     this.showMenu =!  this.showMenu;
+                    this.cancelScroll();
                 }
                 
             }
@@ -49,7 +53,7 @@
 </script>
 
 <template>
-    <header ref="headRef">
+    <header>
         <h1>ANDREW<span>MAHE</span></h1>
       
         <!-- Menu PC - Tablette-->
@@ -85,8 +89,6 @@
         </div>
     </div>
 
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-
 </template>
   
 <style scoped>
@@ -99,7 +101,6 @@ header{
     max-width: 100%;
     width: 75%;
     margin: auto;
-    background-color: RED;
 }
 
 header h1{
@@ -192,11 +193,6 @@ header a:hover:after,
 }
 
 
-
-
-
-
-
 /** Tablette **/
 @media screen and (max-width: 1024px)  {
 
@@ -208,12 +204,15 @@ header a:hover:after,
     /**
         Navigation qui arrive en slow motion pour rester sur toute la page
     */
+
+    
  
     .nav {
         position: fixed;
         z-index: 1;
         top: 0;
         display: initial;
+        overflow-y: hidden;
     }
     .nav:before, .nav:after {
         content: "";
@@ -347,10 +346,12 @@ header a:hover:after,
 
     .hamburgerMenuContainer{
         display: initial;
-        position: relative;
+        position: absolute;
         z-index: 5;
         right: 15px;
     }
+
+  
 
     .hamburgerMenuContainer::before{
         content: '';
