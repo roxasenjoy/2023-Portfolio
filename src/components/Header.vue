@@ -55,7 +55,7 @@
                 <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Portfolio</li></a>
                 <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Tarifs</li></a>
                 <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Fonctionnement</li></a>
-                <a href="#"><li class="nav__list-item contact" @click="displayMenu('item')">Un projet ?</li></a>
+                <a href="#"><li class="nav__list-itemButton contact" @click="displayMenu('item')">Un projet ?</li></a>
             </ul>
         </div>
     </div>
@@ -133,8 +133,8 @@ header .contact,
 }
 
 header .contact:hover,
-.nav .contact:hover{
-    color: var(--blue);
+.nav__list-itemButton.contact:hover{
+    color: var(--blue) !important;
 }
 
 header .contact:after,
@@ -155,7 +155,7 @@ header .contact:after,
 }
 
 header a:hover:after,
-.nav a:hover:after{
+.nav .nav__list-itemButton:hover:after{
     -webkit-transform: translateX(-2%) translateY(-30%) rotate(45deg);
     transform: translateX(-2%) translateY(-30%) rotate(45deg);
 } 
@@ -163,8 +163,6 @@ header a:hover:after,
 .nav {
     display: none;
 }
-
-
 
 /** Tablette **/
 @media screen and (max-width: 1024px)  {
@@ -211,7 +209,7 @@ header a:hover:after,
         font-size: 36px;
     }
 
-    .nav__list-item.contact{
+    .nav__list-itemButton.contact{
         color: var(--yellow);
         font-size: 36px;
     }
@@ -223,7 +221,9 @@ header a:hover:after,
         flex-direction: column;
     }
 
-    .nav__list-item {
+    .nav__list-item,
+    .nav__list-itemButton
+     {
         position: relative;
         display: inline-block;
         transition-delay: 0.8s;
@@ -249,9 +249,10 @@ header a:hover:after,
         content: '';
     }
 
-    .nav__list-item:hover:afters{
+    .nav__list-item:hover:after{
         transform: scale(1.2);
         opacity: 1;
+        width: 50%;
     }
     
     /**
@@ -273,13 +274,16 @@ header a:hover:after,
         transform: translateX(0%) translateY(0%);
     }
 
-    .nav.active .nav__list-item {
+    .nav.active .nav__list-item,
+    .nav.active .nav__list-itemButton {
         opacity: 1;
         transform: translateX(0%);
-        transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        transition: 0.3s ease-in-out;
     }
 
     /** Affichage smooth de tous les éléments de la navigation */
+    
+
     .nav.active .nav__list-item:nth-child(0) {
         transition-delay: 0.5s;
     }
@@ -295,6 +299,10 @@ header a:hover:after,
     .nav.active .nav__list-item:nth-child(4) {
         transition-delay: 0.9s;
     } 
+
+    .nav.active .nav__list-itemButton:first-child{
+        transition-delay: 0.5s;
+    }
 
     .computerMenu{
         display: none;
