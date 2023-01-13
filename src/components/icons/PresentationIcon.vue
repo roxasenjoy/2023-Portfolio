@@ -1,7 +1,7 @@
 
 
 <template>
-  <img alt="Homme actuellement en train de développer des sites internet" src='@/assets/images/presentation.png' />
+  <img alt="Homme actuellement en train de développer des sites internet" src='@/assets/images/presentation.png' class="transition" />
 </template>
 
  
@@ -19,6 +19,10 @@ img{
 
 /** Tablette **/
 @media screen and (max-width: 768px)  {
+  img{
+    max-width: 300px;
+}
+
 }
 
 </style>

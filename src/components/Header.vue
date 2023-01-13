@@ -11,20 +11,45 @@
             }
         },
 
+        mounted() {
+            this.vueOnScroll();
+        },
+
         methods: {
+
+            vueOnScroll() {
+                var prev = window.pageYOffset;
+                const refs: any = this.$refs.headRef; // assign the reference in variable
+
+                window.addEventListener("scroll", () => {
+                var curr = window.pageYOffset;
+
+                if (curr > 0 && curr < 100) {
+                    refs.classList.remove("AlreadyToTheTop");
+                    refs.classList.remove("scrolling");
+                } else if(curr >= 100){
+                    refs.classList.add("scrolling");
+                    refs.classList.remove("AlreadyToTheTop");
+                }
+                    prev = curr;
+                });
+            },
+
             displayMenu(type: string) {
 
-                if(type === 'menu' || (this.showMenu && type === 'item')){
-                    this.showMenu = !this.showMenu;
+                if(type === 'menu' ||  ( this.showMenu && type === 'item')){
+                    this.showMenu =!  this.showMenu;
                 }
                 
             }
         }
+        
     }
+
 </script>
 
 <template>
-    <header>
+    <header ref="headRef">
         <h1>ANDREW<span>MAHE</span></h1>
       
         <!-- Menu PC - Tablette-->
@@ -60,19 +85,21 @@
         </div>
     </div>
 
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>v
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
 </template>
   
-<style>
+<style scoped>
 
 header{
-    padding: 44px 0px;
+    padding: 33px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 100%;
     width: 75%;
     margin: auto;
+    background-color: RED;
 }
 
 header h1{
@@ -164,6 +191,12 @@ header a:hover:after,
     display: none;
 }
 
+
+
+
+
+
+
 /** Tablette **/
 @media screen and (max-width: 1024px)  {
 
@@ -171,6 +204,10 @@ header a:hover:after,
         max-width: 100%;
         width:90%;
     }
+
+    /**
+        Navigation qui arrive en slow motion pour rester sur toute la page
+    */
  
     .nav {
         position: fixed;
@@ -311,9 +348,8 @@ header a:hover:after,
     .hamburgerMenuContainer{
         display: initial;
         position: relative;
-        position: fixed;
         z-index: 5;
-        right: 35px;
+        right: 15px;
     }
 
     .hamburgerMenuContainer::before{

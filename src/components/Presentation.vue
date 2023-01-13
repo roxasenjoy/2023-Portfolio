@@ -8,8 +8,8 @@
     
     <section>
         <div class="left">
-            <h1>Développeur Web & Formateur à Caen</h1>
-            <p> Lorem ipsum dolor sit amet, consectetur 
+            <h1 class="">Développeur Web & Formateur</h1>
+            <p class=""> Lorem ipsum dolor sit amet, consectetur 
                 adipiscing elit. Pellentesque sit amet metus 
                 ut sapien luctus accumsan eu ac enim.
             </p>
@@ -30,7 +30,9 @@ section{
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    height: 70vh;
+    height: 79vh;
+    width: 75%;
+    margin: auto;
 }
 
 section .left{
@@ -76,14 +78,37 @@ section .left a:before{
 /** Tablette **/
 @media screen and (max-width: 1024px)  {
     section{
-        flex-direction: column;
-        height: initial;
+        flex-direction: column-reverse;
+        height: 80vh;
+        width: 90%;
     }
+
+    section .left{
+        margin: initial;
+    }
+
+    section .left h1{
+        font-size: 3em;
+    }
+
+    section .left p,
+    section .left a{
+        font-size: 1.5em;
+    }
+
+
 }
 
 /** Tablette **/
 @media screen and (max-width: 768px)  {
-    
+    section .left h1{
+        font-size: 2em;
+    }
+
+    section .left p,
+    section .left a{
+        font-size: 1em;
+    }
 }
 
 </style>
