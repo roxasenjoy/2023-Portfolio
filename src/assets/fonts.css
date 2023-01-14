@@ -1,20 +1,20 @@
 @font-face {
     font-family: "Jura Normal";
-    src: url("./fonts/Jura/JuraBook.ttf");
+    src: url("./fonts/Jura/Jura-Regular.ttf");
   }
 
 @font-face {
   font-family: "Jura Light";
-  src: url("./fonts/Jura/JuraLight.ttf");
+  src: url("./fonts/Jura/Jura-Light.ttf");
 }
 
 @font-face {
     font-family: "Jura Bold";
-    src: url("./fonts/Jura/JuraDemiBold.ttf");
+    src: url("./fonts/Jura/Jura-SemiBold.ttf");
   }
 
 @font-face {
   font-family: "Jura Medium";
-  src: url("./fonts/Jura/JuraMedium.ttf");
+  src: url("./fonts/Jura/Jura-Medium.ttf");
 }
 

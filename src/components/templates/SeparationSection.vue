@@ -20,7 +20,7 @@
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
     margin: auto;
-    margin: 50px auto auto auto;
+    margin: 50px auto 50px auto;
 }
 
 .rectangle_inside{

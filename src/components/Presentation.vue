@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-    import PresentationIconVue from './icons/PresentationIcon.vue';
+    import PresentationIconVue from './images/PresentationIcon.vue';
 
 </script>
 
@@ -8,7 +8,7 @@
     
     <section>
         <div class="left">
-            <h1 class="">Développeur Web & Formateur</h1>
+            <h1 class="">Brillez en ligne avec un site internet à votre image</h1>
             <p class=""> Lorem ipsum dolor sit amet, consectetur 
                 adipiscing elit. Pellentesque sit amet metus 
                 ut sapien luctus accumsan eu ac enim.
