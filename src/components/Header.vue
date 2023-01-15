@@ -192,6 +192,16 @@ header a:hover:after,
     display: none;
 }
 
+/** Tablette **/
+@media screen and (max-width: 1400px)  {
+
+    header{
+        width: 90%;
+    }
+
+}
+
+
 
 /** Tablette **/
 @media screen and (max-width: 1024px)  {

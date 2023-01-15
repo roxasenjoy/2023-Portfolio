@@ -13,7 +13,6 @@
     width: 50px;
     height: 50px;
     border: 2px solid var(--white);
-    /* padding: 20px 25px; */
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -o-transform: rotate(45deg);

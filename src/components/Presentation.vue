@@ -76,10 +76,19 @@ section .left a:before{
 }
 
 /** Tablette **/
+@media screen and (max-width: 1400px)  {
+
+    section{
+        width: 90%;
+    }
+
+}
+
+/** Tablette **/
 @media screen and (max-width: 1024px)  {
     section{
         flex-direction: column-reverse;
-        height: 80vh;
+        height: 90vh;
         width: 90%;
     }
 
@@ -102,7 +111,11 @@ section .left a:before{
 /** Tablette **/
 @media screen and (max-width: 768px)  {
     section .left h1{
-        font-size: 2em;
+        font-size: 1.5em;
+    }
+
+    section{
+        height: 70vh;
     }
 
     section .left p,
