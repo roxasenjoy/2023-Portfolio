@@ -111,11 +111,11 @@ section .left a:before{
 /** Tablette **/
 @media screen and (max-width: 768px)  {
     section .left h1{
-        font-size: 1.5em;
+        font-size: 2.5em;
     }
 
     section{
-        height: 70vh;
+        height: 90vh;
     }
 
     section .left p,
