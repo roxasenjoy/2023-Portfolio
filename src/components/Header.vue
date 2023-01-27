@@ -4,7 +4,12 @@
         showMenu: boolean,
     }
 
+    
+
     export default {
+
+        
+
         data(): Menu {
             return {
                 showMenu: false
@@ -40,9 +45,27 @@
 
             displayMenu(type: string) {
 
+                let box = document.getElementById('box')!;
+
                 if(type === 'menu' ||  ( this.showMenu && type === 'item')){
                     this.showMenu =!  this.showMenu;
                     this.cancelScroll();
+                }
+
+                if (box.classList.contains('hidden')) {
+                    box.classList.remove('hidden');
+                    setTimeout(function () {
+                        box.classList.remove('visuallyhidden');
+                    }, 20);
+                } else {
+                    box.classList.add('visuallyhidden');    
+                    box.addEventListener('transitionend', function(e) {
+                    box.classList.add('hidden');
+                    }, {
+                        capture: false,
+                        once: true,
+                        passive: false
+                    });
                 }
                 
             }
@@ -77,17 +100,20 @@
         </div>    
     </header>
 
-    <div class="nav" :class="{ active: showMenu }">
-        <div class="nav__content">
-            <ul class="nav__list">
-                <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Services</li></a>
-                <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Portfolio</li></a>
-                <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Tarifs</li></a>
-                <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Fonctionnement</li></a>
-                <a href="#"><li class="nav__list-itemButton contact" @click="displayMenu('item')">Un projet ?</li></a>
-            </ul>
+    <div >
+        <div class="nav" :class="{ active: showMenu }">
+            <div class="nav__content">
+                <ul class="nav__list">
+                    <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Services</li></a>
+                    <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Portfolio</li></a>
+                    <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Tarifs</li></a>
+                    <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Fonctionnement</li></a>
+                    <a href="#"><li class="nav__list-itemButton contact" @click="displayMenu('item')">Un projet ?</li></a>
+                </ul>
+            </div>
         </div>
     </div>
+    
 
 </template>
   
