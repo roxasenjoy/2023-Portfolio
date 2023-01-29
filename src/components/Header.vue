@@ -18,6 +18,7 @@
 
         mounted() {
             this.cancelScroll();
+            this.setHref(false);
         },
 
         methods: {
@@ -45,27 +46,33 @@
 
             displayMenu(type: string) {
 
-                let box = document.getElementById('box')!;
-
                 if(type === 'menu' ||  ( this.showMenu && type === 'item')){
-                    this.showMenu =!  this.showMenu;
+                    this.showMenu =  !this.showMenu;
                     this.cancelScroll();
-                }
-
-                if (box.classList.contains('hidden')) {
-                    box.classList.remove('hidden');
-                    setTimeout(function () {
-                        box.classList.remove('visuallyhidden');
-                    }, 20);
+                    this.setHref(true);
                 } else {
-                    box.classList.add('visuallyhidden');    
-                    box.addEventListener('transitionend', function(e) {
-                    box.classList.add('hidden');
-                    }, {
-                        capture: false,
-                        once: true,
-                        passive: false
-                    });
+                    this.setHref(false);
+                }   
+            },
+
+            setHref(isRemove: boolean){
+
+                let navMenu = document.getElementsByClassName("linkMenu");
+                // Menu fermé
+                if(isRemove){
+                    let index = 0;
+                    let navList = ['#services', '#portfolio', '#tarifs', '#fonctionnement', '#contact']
+                    for (let e of navMenu) {
+                        e.setAttribute('href', navList[index]);
+                        index++;
+                    }
+                } 
+                // Menu ouvert
+                else 
+                {
+                    for (let e of navMenu) {
+                        e.removeAttribute('href');
+                    }
                 }
                 
             }
@@ -104,11 +111,11 @@
         <div class="nav" :class="{ active: showMenu }">
             <div class="nav__content">
                 <ul class="nav__list">
-                    <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Services</li></a>
-                    <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Portfolio</li></a>
-                    <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Tarifs</li></a>
-                    <a href="#"><li class="nav__list-item" @click="displayMenu('item')">Fonctionnement</li></a>
-                    <a href="#"><li class="nav__list-itemButton contact" @click="displayMenu('item')">Un projet ?</li></a>
+                    <a href="#" class="linkMenu"><li class="nav__list-item" @click="displayMenu('item')">Services</li></a>
+                    <a href="#" class="linkMenu"><li class="nav__list-item" @click="displayMenu('item')">Portfolio</li></a>
+                    <a href="#" class="linkMenu"><li class="nav__list-item" @click="displayMenu('item')">Tarifs</li></a>
+                    <a href="#" class="linkMenu"><li class="nav__list-item" @click="displayMenu('item')">Fonctionnement</li></a>
+                    <a href="#" class="linkMenu"><li class="nav__list-itemButton contact" @click="displayMenu('item')">Un projet ?</li></a>
                 </ul>
             </div>
         </div>
