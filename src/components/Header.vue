@@ -143,9 +143,9 @@ header h1{
 }
 
 header h1 span{
-    font-size: 31px;
+    font-size: 28px;
     font-family: var(--bold);
-    font-weight: 300;
+    font-weight: 900;
     line-height: 80.8%;
 }
 

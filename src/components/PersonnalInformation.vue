@@ -1,7 +1,5 @@
 <script setup lang="ts">
     import MoiImageVue from './images/MoiImage.vue';
-
-
 </script>
 
 <template>
@@ -27,7 +25,7 @@
                 
                 <div class="squareContainer">
                     <div class="square2 square">
-                    <p>4</p>
+                    <p>5</p>
                     <p>Nombre de clients</p>
                     </div>
                 </div>
@@ -55,7 +53,6 @@ section{
     display: flex;
     justify-content:space-between;
     flex-direction: row;
-    margin: 30vh auto 30vh auto;
 }
 
 .left{

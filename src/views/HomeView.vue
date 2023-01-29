@@ -3,7 +3,9 @@
   import SeparationSection from '../components/templates/SeparationSection.vue';
   import Header from '../components/Header.vue';
   import Presentation from '../components/Presentation.vue';
-  import PersonnalInformation from '@/components/PersonnalInformation.vue';
+  import PersonnalInformation from '@/components/PersonnalInformation.vue';  
+  
+  import Prestations from '@/components/Prestations.vue'; 
 
 </script>
 
@@ -14,4 +16,6 @@
 
     <PersonnalInformation></PersonnalInformation>
     <SeparationSection></SeparationSection>
+
+    <Prestations></Prestations>
 </template>

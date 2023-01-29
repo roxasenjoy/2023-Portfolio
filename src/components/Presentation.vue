@@ -32,7 +32,7 @@ section{
     flex-direction: row;
     height: 79vh;
     width: 75%;
-    margin: auto;
+    margin: auto auto -22.8vh auto;
 }
 
 section .left{
@@ -90,7 +90,10 @@ section .left a:before{
         flex-direction: column-reverse;
         height: 90vh;
         width: 90%;
+        margin: auto auto -10vh auto;
     }
+
+    
 
     section .left{
         margin: initial;
