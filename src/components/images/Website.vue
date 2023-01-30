@@ -12,9 +12,18 @@
   }
   
   
+/** Tablette **/
+@media screen and (max-width: 1400px)  {
+  img{
+    max-width: 400px;
+  } 
+}
+
   /** Tablette **/
   @media screen and (max-width: 1024px)  {
-      
+    img{
+      max-width: 350px;
+    } 
   }
   
   /** Tablette **/

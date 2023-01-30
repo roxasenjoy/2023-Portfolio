@@ -51,12 +51,13 @@
 
 .container .contentRight{
     text-align: left;
-    margin-right: 30vh;
+    margin-right: 20%;
 }
 
 .container h3{
     font-size: 40px;
     font-family: var(--bold);
+    margin: initial;
 }
 
 .container p{
@@ -77,13 +78,33 @@
 }
 
 /** Tablette **/
+@media screen and (max-width: 1400px)  {
+    .container .contentRight{
+        margin-right: 5%;
+    } 
+}
+
+
+/** Tablette **/
 @media screen and (max-width: 1024px)  {
     
 }
 
 /** Tablette **/
 @media screen and (max-width: 768px)  {
+    .container{
+        flex-direction: column;
+    }
 
+    .container h3{
+        text-align: left;
+        font-size: 30px;
+        margin: 30px 0 0 0;
+    }
+
+    .container .content{
+        margin-right: 0%;
+    }
 }
   
 </style>

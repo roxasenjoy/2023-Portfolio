@@ -8,7 +8,7 @@
     <div class="container">
 
         <slot name="image"></slot>
-        <div class="content">
+        <div class="content transition">
             <h3>
                 <slot name="title"></slot>
             </h3>
@@ -49,14 +49,19 @@
     margin:50PX auto;
 }
 
+.container:last-child{
+    margin: 50px auto 0 auto;
+}
+
 .container .content{
     text-align: left;
-    margin-left: 30vh;
+    margin-left: 20%;
 }
 
 .container h3{
     font-size: 40px;
     font-family: var(--bold);
+    margin: initial;
 }
 
 .container p{
@@ -77,13 +82,32 @@
 }
 
 /** Tablette **/
+@media screen and (max-width: 1400px)  {
+    .container .content{
+        margin-left: 5%;
+    }
+}
+
+/** Tablette **/
 @media screen and (max-width: 1024px)  {
     
 }
 
 /** Tablette **/
 @media screen and (max-width: 768px)  {
+    .container{
+        flex-direction: column;
+    }
 
+    .container h3{
+        text-align: left;
+        font-size: 30px;
+        margin: 30px 0 0 0;
+    }
+
+    .container .content{
+        margin-left: 0%;
+    }
 }
   
 </style>

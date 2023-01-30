@@ -6,6 +6,7 @@
   import PersonnalInformation from '@/components/PersonnalInformation.vue';  
   
   import Prestations from '@/components/Prestations.vue'; 
+import Realisations from '@/components/Realisations.vue';
 
 </script>
 
@@ -18,4 +19,8 @@
     <SeparationSection></SeparationSection>
 
     <Prestations></Prestations>
+    <SeparationSection></SeparationSection>
+
+    <Realisations></Realisations>
+    <SeparationSection></SeparationSection>
 </template>

@@ -94,6 +94,7 @@ section{
     text-align: center;
     width: 75%;
     margin: auto;
+    color: var(--white);
 }
 
 section h2{
@@ -110,14 +111,24 @@ section p{
 
 /** Tablette **/
 @media screen and (max-width: 1400px)  {
+
+    section{
+        width: 90%;
+    }
 }
 
-@media screen and (max-width: 1150px)  {
-    
+@media screen and (max-width: 1150px){
 }
 
 /** Tablette **/
 @media screen and (max-width: 1024px)  {
+    section h2{
+        font-size: 40px;
+    }
+
+    section p{
+        font-size: 18px;
+    }
 }
 
 /** Tablette **/
