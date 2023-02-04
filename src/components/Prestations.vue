@@ -115,6 +115,10 @@ section p{
     section{
         width: 90%;
     }
+
+    .container{
+        margin: 50px auto 0 auto ;
+    }
 }
 
 @media screen and (max-width: 1150px){

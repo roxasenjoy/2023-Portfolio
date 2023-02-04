@@ -1,4 +1,16 @@
-<script setup lang="ts">
+<script lang="ts">
+
+export default{
+    data() {
+        return { 
+            ACDGC: 'ACDGC',
+            TM: 'TM',
+            ZESTE: 'ZESTE',
+            LCDC: 'LCDC'
+            
+        }
+    },
+}
 
 </script>
 
@@ -8,9 +20,20 @@
         <div class="img-clip-block">
   			<div class="img-clip-block">
                 <div class="img-clip-row">
+                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap titleContainer">
+                        <div class="overlay ">
+                            <div class="overlay-content titleContent">Projets & Réalisations</div>
+                        </div>
+                    </a>
+
                     <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
-                        <div class="overlay">
-                            <div class="overlay-content">Projets & Réalisations</div>
+                        <div class="overlay imageOverlay">			
+                            <div class="overlay-content">{{ACDGC}}</div>
+                        </div>
+                    </a>
+                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
+                        <div class="overlay imageOverlay">			
+                            <div class="overlay-content">{{TM}}</div>
                         </div>
                     </a>
                 </div>
@@ -18,51 +41,66 @@
 
                 <div class="img-clip-row">
                     <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
-                        <div class="overlay">
-                            <div class="overlay-content">IMAGE</div>
+                        <div class="overlay imageOverlay">
+                            <div class="overlay-content">{{ZESTE}}</div>
                         </div>
                     </a>
 
                     <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
-                        <div class="overlay">			
-                            <div class="overlay-content">IMAGE</div>
+                        <div class="overlay imageOverlay">			
+                            <div class="overlay-content">{{LCDC}}</div>
                         </div>
                     </a>
                         
                 </div>
 
                 <div class="img-clip-row">
-                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap polygon-clip-rhombus">
-                        <div class="overlay">
+                    <!-- <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
+                        <div class="overlay imageOverlay">
+                            <div class="overlay-content">IMAGE</div>			
+                        </div>
+                    </a>
+
+                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
+                        <div class="overlay imageOverlay">			
+                            <div class="overlay-content">IMAGE</div>
+                        </div>
+                    </a> -->
+
+                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap containerDevis">
+                        <div class="overlay devisOverlay">			
+                            <div class="overlay-content devisContent">CRÉER VOTRE SITE INTERNET</div>
+                        </div>
+                    </a>
+                        
+                </div>
+
+                <!-- <div class="img-clip-row">
+                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
+                        <div class="overlay imageOverlay">
                             <div class="overlay-content">IMAGE</div>			
                         </div>
                     </a>
                         
                 </div>
-		</div> <!-- /img-clip-block -->
-            <div class="img-clip-row">
-                <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap" style='margin-top: -70px;'>
-                        <div class="overlay">
+
+                <div class="img-clip-row">
+
+                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
+                        <div class="overlay imageOverlay">			
                             <div class="overlay-content">IMAGE</div>
                         </div>
-                </a>
+                    </a>
 
-                <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap" style='margin-top: -70px;'>
-                        <div class="overlay">			
-                            <div class="overlay-content">IMAGE</div>
+                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap containerDevis">
+                        <div class="overlay devisOverlay">			
+                            <div class="overlay-content devisContent">CRÉER VOTRE SITE INTERNET</div>
                         </div>
-                </a>
-                    
-            </div>
+                    </a>
+                        
+                </div> -->
+            </div> <!-- /img-clip-block -->
 
-            <div class="img-clip-row">
-                <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap polygon-clip-rhombus">
-                    <div class="overlay">
-                            <div class="overlay-content">IMAGE</div>			
-                        </div>
-                </a>
-                    
-            </div>
         </div>
     
     </section>
@@ -72,11 +110,10 @@
 <style scoped>
 
 section{
-    width: 75%;
-    margin: auto;
+    width: 100%;
+    margin: 50vh 0 0 0;
     justify-content:space-between;
     flex-direction: row;
-
 }
 
 
@@ -92,43 +129,44 @@ section{
 
 .img-clip-row {
   text-align: center;
+  margin-top: -154px;
 }
 
 .img-clip-row:first-of-type .img-clip-wrap {
-  background-position: top;
-  margin-bottom: -50px;
+    background-position: top;
+    margin: -30px 10px -30px 10px;
+
 }
 
 .img-clip-row:nth-of-type(2) .img-clip-wrap:nth-of-type(odd) {
-  background-position: left;
-  margin-right: 20px;
+    background-position: left;
+    margin: 0 10px 0 0;
 }
 
 .img-clip-row:nth-of-type(2) .img-clip-wrap:nth-of-type(even) {
   background-position: right;
-  margin-left: 20px;
+  margin: 0 0 0 10px;
 }
 
 .img-clip-row:last-of-type .img-clip-wrap {
   background-position: bottom;
-  margin-top: -50px;
+  margin: -30px 10px -30px 10px;
+
 }
 
 .img-clip-wrap {
-  width: 500px; 
-  height: 500px; 
-  display: block;
+  width: 400px; 
+  height: 400px; 
   position: relative;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
   -webkit-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
   background-color: white;
-  
+  display: inline-block;
 }
 
 .overlay {
-  /* background-image: url('@/assets/images/andrew.jpg'); */
-  background-color: none;
+  /* background-color: none; */
   clip-path: polygon(50% 1%, 99% 50%, 50% 99%, 1% 50%);
   background-size: cover;
   position: absolute;
@@ -141,10 +179,28 @@ section{
   transition: all 0.3s linear;
 }
 
+.imageOverlay{
+      background-image: url('@/assets/images/andrew.jpg');
+}
+
+.containerDevis{
+    background-color: initial;
+}
+.devisOverlay{
+    background-color: var(--yellow); 
+}
+
+.devisContent{
+    font-family: var(--bold) !important;
+    color: var(--white) !important;
+}
+
+.titleContainer .titleContent{
+    color: var(--blue) !important;
+}
+
 .overlay-content {
-    color: red;
-    font-weight: 400;
-    font-size: 180%;
+    color: var(--white);
     text-transform: uppercase;
     position: absolute;
     left: 50%;
@@ -153,6 +209,9 @@ section{
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+
+    font-family: var(--normal);
+    font-size: 26px;
 }
 
 .img-clip-wrap:hover {
@@ -165,279 +224,71 @@ section{
   display: block;
 }
 
-@media only screen and (min-width: 650px) {
-  .img-clip-row {
-    margin-top: -154px;
-  }
-
-  .img-clip-row:first-of-type {
-    margin-top: auto;
-  }
-
-  .img-clip-wrap {
-    display: inline-block;
-  }
-}
-
-
-
-.diamonds {
-    font: Helvetica, Arial, sans-serif;
-    font-size: 0;
-    margin: 40px auto;
-    background-color: red;
-}
-
-.fab,
-.fas{
-  position: absolute;
-  width: 100%;
-  height: auto;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.7;
-}
-
-.fa-js {
-  border-radius: 0%;
-  color:#F5DE19;
-  background-color: #000000;
-  width: 68%;
-  height: 68%;
-  opacity:0.85;
-  }
-
-.fa-bold {
-  border-radius: 0%;
-  color:#ffffff;
-  background-color: #563D7C;
-  border-radius: 10px;
-  width: 68%;
-  height: 68%;
-  }
-
-.fab:hover{
-  opacity:1;
-}
-
-.fas:hover{
-  opacity:1;
-}
-
-ul li {
-  margin-bottom: 15px;
-}
-
-@media only screen and (min-width: 1348px) {
-
-    .csstransforms .diamonds {
-        max-width: 1270px;
-    }
-
-    .csstransforms .diamonds>li:nth-child(9n+6) {
-        margin-left: 135px;
-    }
-
-    .csstransforms .diamonds>li:nth-child(9n+5) {
-        margin-right: 0;
-    }
-
-    .csstransforms .diamonds>li:nth-child(n+5) {
-        margin-top: -55px;
-    }
-}
-
-@media only screen and (max-width: 1347px) and (min-width: 1078px) {
-    .csstransforms .diamonds {
-        max-width: 1000px;
-    }
-  
-    .csstransforms .diamonds>li:nth-child(7n+5) {
-        margin-left: 135px;
-    }
-  
-    .csstransforms .diamonds>li:nth-child(7n+4) {
-        margin-right: 0;
-    }
-
-    .csstransforms .diamonds>li:nth-child(n+4) {
-        margin-top: -55px;
-    }
-}
-
-@media only screen and (max-width: 1077px) and (min-width: 808px) {
-
-
-    .csstransforms .diamonds {
-        max-width: 730px;
-    }
-
- 
-    .csstransforms .diamonds>li:nth-child(5n+4) {
-        margin-left: 135px;
-    }
-
-
-    .csstransforms .diamonds>li:nth-child(5n+3) {
-        margin-right: 0;
-    }
-
-
-    .csstransforms .diamonds>li:nth-child(n+3) {
-        margin-top: -55px;
-    }
-}
-
-@media only screen and (max-width: 807px) and (min-width: 538px) {
-
-    .csstransforms .diamonds {
-        max-width: 460px;
-    }
-
-
-    .csstransforms .diamonds>li:nth-child(3n+3) {
-        margin-left: 135px;
-    }
-
-
-    .csstransforms .diamonds>li:nth-child(3n+2) {
-        margin-right: 0;
-    }
-
-
-    .csstransforms .diamonds>li:nth-child(n+2) {
-        margin-top: -55px;
-    }
-}
-
-
-.csstransforms .diamonds {
-    padding: 39px 0;
-}
-
-@media only screen and (max-width: 537px) {
-
-
-    .csstransforms .diamonds {
-        padding: 0;
-        text-align: center;
-    }
-}
-
-
-.no-csstransforms .diamonds {
-    max-width: 1060px;
-}
-
-
-.diamonds>li {
-    display: inline-block;
-    font-size: 18px;
-    margin-right: 80px;
-}
-
-@media only screen and (max-width: 537px) {
-
-    .diamonds>li {
-        margin-right: 0;
-        width: 160px;
-    }
-}
-
-.no-csstransforms .diamonds>li {
-    margin: 0 20px 20px 0;
-}
-
-.diamonds .diamond {
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
-    background: #f4f4f4;
-    -webkit-box-shadow: 0 0 0 1px #cccccc;
-    -moz-box-shadow: 0 0 0 1px #cccccc;
-    box-shadow: 0 0 0 1px #cccccc;
-    color: #000;
-    display: block;
-    height: 190px;
-    overflow: hidden;
-    -webkit-perspective: 1000;
-    -moz-perspective: 1000;
-    -ms-perspective: 1000;
-    -o-perspective: 1000;
-    perspective: 1000;
-    position: relative;
-    text-decoration: none;
-    width: 190px;
-}
-
-.csstransforms .diamonds .diamond {
-    overflow: hidden;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-}
-
-@media only screen and (max-width: 537px) {
-
-    .csstransforms .diamonds .diamond {
-        height: 160px;
-        -webkit-transform: rotate(0);
-        -moz-transform: rotate(0);
-        -ms-transform: rotate(0);
-        -o-transform: rotate(0);
-        transform: rotate(0);
-        width: 160px;
-    }
-}
-
-.diamonds .content {
-    display: table-cell;
-    height: 190px;
-    padding: 0 10px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    text-align: center;
-    vertical-align: middle;
-    width: 190px;
-}
-
-@media only screen and (max-width: 537px) {
-
-    .csstransforms .diamonds .content {
-        height: 160px;
-        -webkit-transform: rotate(0);
-        -moz-transform: rotate(0);
-        -ms-transform: rotate(0);
-        -o-transform: rotate(0);
-        transform: rotate(0);
-        width: 160px;
-    }
-}
-
 
 /** Tablette **/
 @media screen and (max-width: 1400px)  {
 
+    
+    section{
+        margin: 40vh 0 0 0;
+    }
+
+    .img-clip-wrap {
+        width: 300px; 
+        height: 300px; 
+    }
+    .img-clip-row:nth-of-type(2) .img-clip-wrap:nth-of-type(odd) {
+       margin: initial;
+    }
+
+    .img-clip-row:nth-of-type(2) .img-clip-wrap:nth-of-type(even) {
+     margin: initial;
+    }
+
+    .img-clip-row:last-of-type .img-clip-wrap {
+      margin: initial;
+    }
+
+    /* Première ligne */
+
+    .img-clip-row:first-of-type .img-clip-wrap {
+       margin: initial;
+    }
+    
+
+    .img-clip-row{
+        margin-top: -140px;
+    }
+}
+
+/** Tablette **/
+@media screen and (max-width: 918px)  {
+
+    section{
+        margin: 30vh 0 0 0;
+    }
+    .img-clip-row:first-of-type .img-clip-wrap {
+       margin: 0 5px;
+    }
+    .img-clip-row:nth-child(1) .img-clip-wrap:last-child{
+        margin-top: -145px;
+    }
 
 }
 
 /** Tablette **/
-@media screen and (max-width: 1024px)  {
+@media screen and (max-width: 650px){
 
+    section{
+        margin: 25vh 0 0 0;
+    }
+    .img-clip-row{
+        margin-top: 0px;
+    }
 
-
-}
-
-/** Tablette **/
-@media screen and (max-width: 768px)  {
+    .img-clip-row:nth-child(1) .img-clip-wrap:last-child{
+        margin-top: 0px;
+    }
 }
 
 </style>
