@@ -6,7 +6,7 @@ export default{
             ACDGC: 'ACDGC',
             TM: 'TM',
             ZESTE: 'ZESTE',
-            LCDC: 'LCDC'
+            LCDC: 'LCDC',
             
         }
     },
@@ -21,19 +21,17 @@ export default{
   			<div class="img-clip-block">
                 <div class="img-clip-row">
                     <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap titleContainer">
-                        <div class="overlay ">
+                        <div class="overlay overlayContainer">
                             <div class="overlay-content titleContent">Projets & Réalisations</div>
                         </div>
                     </a>
 
-                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
-                        <div class="overlay imageOverlay">			
-                            <div class="overlay-content">{{ACDGC}}</div>
+                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap" >
+                        <div class="overlay imageOverlay" :class="ACDGC">			
                         </div>
                     </a>
                     <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
-                        <div class="overlay imageOverlay">			
-                            <div class="overlay-content">{{TM}}</div>
+                        <div class="overlay imageOverlay" :class="TM">			
                         </div>
                     </a>
                 </div>
@@ -41,14 +39,12 @@ export default{
 
                 <div class="img-clip-row">
                     <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
-                        <div class="overlay imageOverlay">
-                            <div class="overlay-content">{{ZESTE}}</div>
-                        </div>
+                        <div class="overlay imageOverlay" :class="ZESTE"></div>
                     </a>
 
                     <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
-                        <div class="overlay imageOverlay">			
-                            <div class="overlay-content">{{LCDC}}</div>
+                        <div class="overlay imageOverlay" :class="LCDC">			
+                            <!-- <div class="overlay-content">{{LCDC}}</div> -->
                         </div>
                     </a>
                         
@@ -104,7 +100,6 @@ export default{
         </div>
     
     </section>
-
 </template>
   
 <style scoped>
@@ -179,24 +174,47 @@ section{
   transition: all 0.3s linear;
 }
 
-.imageOverlay{
-      background-image: url('@/assets/images/andrew.jpg');
+.LCDC{
+    background-image: url('@/assets/images/logo/LCDC.jpg');
 }
 
+.ZESTE{
+    background-image: url('@/assets/images/andrew.jpg');
+}
+
+.TM{
+    background-image: url('@/assets/images/andrew.jpg');
+}
+
+.ACDGC{
+    background-image: url('@/assets/images/andrew.jpg');
+}
+
+.titleContainer,
 .containerDevis{
     background-color: initial;
 }
-.devisOverlay{
-    background-color: var(--yellow); 
+.titleContainer::after,
+.containerDevis::after {
+  aspect-ratio: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  clip-path: polygon(100.00% 50.00%,50.00% 100.00%,0.00% 50.00%,50.00% 0.00%,100.00% 50.00%,calc(50.00% - -0.00px) calc(0.00% - -2.00px),calc(0.00% - -2.00px) calc(50.00% - 0.00px),calc(50.00% - 0.00px) calc(100.00% - 2.00px),calc(100.00% - 2.00px) calc(50.00% - 0.00px),calc(50.00% - -0.00px) calc(0.00% - -2.00px));
+}
+
+.titleContainer::after{
+    background-color: var(--white);
+}
+.containerDevis::after {
+    background-color:var(--yellow);
 }
 
 .devisContent{
-    font-family: var(--bold) !important;
-    color: var(--white) !important;
-}
-
-.titleContainer .titleContent{
-    color: var(--blue) !important;
+    color: var(--yellow) !important;
 }
 
 .overlay-content {
@@ -236,6 +254,12 @@ section{
     .img-clip-wrap {
         width: 300px; 
         height: 300px; 
+    }
+
+    .titleContainer::after,
+    .containerDevis::after {
+    width: 300px;
+    height: 300px;
     }
     .img-clip-row:nth-of-type(2) .img-clip-wrap:nth-of-type(odd) {
        margin: initial;
