@@ -1,36 +1,59 @@
 <script lang="ts">
 
+import modal from "@/components/templates/modal-organisation.vue";
+
 export default{
+    name: "home-realisation",
+	components: {modal},
     data() {
         return { 
             ACDGC: 'ACDGC',
             TM: 'TM',
             ZESTE: 'ZESTE',
             LCDC: 'LCDC',
+            showModal: false
             
         }
     },
+
+    methods:{
+		closeModal(){
+			this.showModal = false;
+		}
+	}
 }
+
 
 </script>
 
 <template>
     
+    <div>
+		<div class="container">
+			<button class="btn btn-success" @click="showModal = true">Show Modal</button>
+			<transition name="modal">
+				<div class="modal-mask" v-if="showModal">
+					<modal @close="closeModal"/>
+				</div>
+			</transition>
+		</div>
+	</div>
+
     <section>
         <div class="img-clip-block">
   			<div class="img-clip-block">
                 <div class="img-clip-row">
-                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap titleContainer">
+                    <a class="img-clip-wrap titleContainer">
                         <div class="overlay overlayContainer">
                             <div class="overlay-content titleContent">Projets & Réalisations</div>
                         </div>
                     </a>
 
-                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap" >
+                    <a class="img-clip-wrap" >
                         <div class="overlay imageOverlay" :class="ACDGC">			
                         </div>
                     </a>
-                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
+                    <a class="img-clip-wrap">
                         <div class="overlay imageOverlay" :class="TM">			
                         </div>
                     </a>
@@ -38,11 +61,11 @@ export default{
                 
 
                 <div class="img-clip-row">
-                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
+                    <a class="img-clip-wrap">
                         <div class="overlay imageOverlay" :class="ZESTE"></div>
                     </a>
 
-                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
+                    <a class="img-clip-wrap">
                         <div class="overlay imageOverlay" :class="LCDC">			
                             <!-- <div class="overlay-content">{{LCDC}}</div> -->
                         </div>
@@ -63,7 +86,7 @@ export default{
                         </div>
                     </a> -->
 
-                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap containerDevis">
+                    <a href="#" class="img-clip-wrap containerDevis">
                         <div class="overlay devisOverlay">			
                             <div class="overlay-content devisContent">CRÉER VOTRE SITE INTERNET</div>
                         </div>
@@ -179,7 +202,7 @@ section{
 }
 
 .ZESTE{
-    background-image: url('@/assets/images/andrew.jpg');
+    background-image: url('@/assets/images/logo/zeste.png');
 }
 
 .TM{
@@ -187,7 +210,7 @@ section{
 }
 
 .ACDGC{
-    background-image: url('@/assets/images/andrew.jpg');
+    background-image: url('@/assets/images/logo/ACDGC.png');
 }
 
 .titleContainer,
