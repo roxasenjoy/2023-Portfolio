@@ -1,24 +1,23 @@
 <script lang="ts">
 
-import modal from "@/components/templates/modal-organisation.vue";
+import modalOrganisation from "@/components/templates/modal-organisation.vue";
 
 export default{
-    name: "home-realisation",
-	components: {modal},
+	components: {modalOrganisation},
     data() {
         return { 
             ACDGC: 'ACDGC',
             TM: 'TM',
             ZESTE: 'ZESTE',
             LCDC: 'LCDC',
-            showModal: false
+            modal: 0
             
         }
     },
 
     methods:{
 		closeModal(){
-			this.showModal = false;
+			this.modal = 0;
 		}
 	}
 }
@@ -27,13 +26,142 @@ export default{
 </script>
 
 <template>
-    
+
     <div>
 		<div class="container">
-			<button class="btn btn-success" @click="showModal = true">Show Modal</button>
-			<transition name="modal">
-				<div class="modal-mask" v-if="showModal">
-					<modal @close="closeModal"/>
+			<transition name="modalOrganisation">
+				<div class="modal-mask">
+					<modalOrganisation @closeEvent="closeModal" v-if="modal==1">
+                        <template #photo>
+                            <div class="imageContainer ACDGCBackground">
+                                <div class="imageContainer ACDGCBackground"></div>
+                            </div>	
+                        </template>
+
+                        <template #company-name>Zeste, la cuisine du jardin</template>
+                        <template #projet-description>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit 
+                            elementum lacinia. Donec quis molestie nibh. Interdum et malesuada 
+                            fames ac ante ipsum primis in faucibus. Nulla dictum euismod magna,
+                            sed blandit sem facilisis non. Curabitur libero velit, dignissim eu 
+                        </template>
+
+                        <template #service-one>1</template>
+                        <template #service-two>2</template>
+                        <template #service-three>3</template>
+                        <template #service-four>4</template>
+
+                        <template #langages-one>5</template>
+                        <template #langages-two>6</template>
+                        <template #langages-three>7</template>
+                        <template #langages-four>8</template>
+
+                        <template #websiteLink>
+                            <a href="http://zeste.andrewmahe.com/" target="_blank">Visiter le site</a>
+                        </template>
+                    </modalOrganisation>
+				</div>
+			</transition>
+
+            <transition name="modalOrganisation">
+				<div class="modal-mask" v-if="modal==2">
+					<modalOrganisation @closeEvent="closeModal">
+                        <template #photo>
+                            <div class="imageContainer zesteBackground">
+                                <div class="imageContainer zesteBackground"></div>
+                            </div>	
+                        </template>
+
+                        <template #company-name>Zeste, la cuisine du jardin</template>
+                        <template #projet-description>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit 
+                            elementum lacinia. Donec quis molestie nibh. Interdum et malesuada 
+                            fames ac ante ipsum primis in faucibus. Nulla dictum euismod magna,
+                            sed blandit sem facilisis non. Curabitur libero velit, dignissim eu 
+                        </template>
+
+                        <template #service-one>1</template>
+                        <template #service-two>2</template>
+                        <template #service-three>3</template>
+                        <template #service-four>4</template>
+
+                        <template #langages-one>5</template>
+                        <template #langages-two>6</template>
+                        <template #langages-three>7</template>
+                        <template #langages-four>8</template>
+
+                        <template #websiteLink>
+                            <a href="http://zeste.andrewmahe.com/" target="_blank">Visiter le site</a>
+                        </template>
+                    </modalOrganisation>
+				</div>
+			</transition>
+
+            <transition name="modalOrganisation">
+				<div class="modal-mask" v-if="modal==3">
+					<modalOrganisation @closeEvent="closeModal">
+                        <template #photo>
+                            <div class="imageContainer zesteBackground">
+                                <div class="imageContainer zesteBackground"></div>
+                            </div>	
+                        </template>
+
+                        <template #company-name>Zeste, la cuisine du jardin</template>
+                        <template #projet-description>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit 
+                            elementum lacinia. Donec quis molestie nibh. Interdum et malesuada 
+                            fames ac ante ipsum primis in faucibus. Nulla dictum euismod magna,
+                            sed blandit sem facilisis non. Curabitur libero velit, dignissim eu 
+                        </template>
+
+                        <template #service-one>1</template>
+                        <template #service-two>2</template>
+                        <template #service-three>3</template>
+                        <template #service-four>4</template>
+
+                        <template #langages-one>5</template>
+                        <template #langages-two>6</template>
+                        <template #langages-three>7</template>
+                        <template #langages-four>8</template>
+
+                        <template #websiteLink>
+                            <a href="http://zeste.andrewmahe.com/" target="_blank">Visiter le site</a>
+                        </template>
+                    </modalOrganisation>
+				</div>
+			</transition>
+
+            <transition name="modalOrganisation">
+				<div class="modal-mask" v-if="modal == 4">
+					<modalOrganisation @closeEvent="closeModal">
+                        <template #photo>
+                            <div class="imageContainer LCDCBackground">
+                                <div class="imageContainer LCDCBackground"></div>
+                            </div>	
+                        </template>
+
+                        <template #company-name>Zeste, la cuisine du jardin</template>
+                        <template #projet-description>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit 
+                            elementum lacinia. Donec quis molestie nibh. Interdum et malesuada 
+                            fames ac ante ipsum primis in faucibus. Nulla dictum euismod magna,
+                            sed blandit sem facilisis non. Curabitur libero velit, dignissim eu 
+                        </template>
+
+                        <template #service-one>1</template>
+                        <template #service-two>2</template>
+                        <template #service-three>3</template>
+                        <template #service-four>4</template>
+
+                        <template #langages-one>5</template>
+                        <template #langages-two>6</template>
+                        <template #langages-three>7</template>
+                        <template #langages-four>8</template>
+
+                        <template #websiteLink>
+                            <a href="http://zeste.andrewmahe.com/" target="_blank">Visiter le site</a>
+                        </template>
+                    </modalOrganisation>
 				</div>
 			</transition>
 		</div>
@@ -49,11 +177,11 @@ export default{
                         </div>
                     </a>
 
-                    <a class="img-clip-wrap" >
+                    <a class="img-clip-wrap" @click="modal=1">
                         <div class="overlay imageOverlay" :class="ACDGC">			
                         </div>
                     </a>
-                    <a class="img-clip-wrap">
+                    <a class="img-clip-wrap" @click="modal=2">
                         <div class="overlay imageOverlay" :class="TM">			
                         </div>
                     </a>
@@ -61,11 +189,11 @@ export default{
                 
 
                 <div class="img-clip-row">
-                    <a class="img-clip-wrap">
+                    <a class="img-clip-wrap" @click="modal=3">
                         <div class="overlay imageOverlay" :class="ZESTE"></div>
                     </a>
 
-                    <a class="img-clip-wrap">
+                    <a class="img-clip-wrap" @click="modal=4"> 
                         <div class="overlay imageOverlay" :class="LCDC">			
                             <!-- <div class="overlay-content">{{LCDC}}</div> -->
                         </div>
@@ -126,6 +254,23 @@ export default{
 </template>
   
 <style scoped>
+
+
+.zesteBackground{
+    background-image: url('@/assets/images/portfolio/zeste.png');
+}
+
+.LCDCBackground{
+    background-image: url('@/assets/images/portfolio/LCDC.png');
+}
+
+.ACDGCBackground{
+    background-image: url('@/assets/images/portfolio/ACDGC.png');
+}
+
+.TMBackground{
+    background-image: url('@/assets/images/portfolio/zeste.png');
+}
 
 section{
     width: 100%;
