@@ -25,7 +25,7 @@ export default {
 					<div class="bar" @click="handleClose"></div>
 				</div>
 
-				<div class="content">
+				<div class="modal-content">
 					<h3><slot name="company-name"></slot></h3>
 
 					<p>	<slot name="projet-description"></slot></p>
@@ -125,45 +125,45 @@ export default {
 	rotate: -45deg;
 }
 
-.content{
+.modal-content{
 	padding: 40px;
 }
 
-.content h3{
+.modal-content h3{
 	font-size: 40px;
 	font-family: var(--bold);
 }
 
-.content p{
+.modal-content p{
 	font-size: 20px;
 	font-family: var(--light);
 	padding: 30px 0;
 	line-height: 150%;
 }
 
-.content .technicalContainer{
+.modal-content .technicalContainer{
 	display: flex;
 	flex-direction: row;
 }
 
-.content .technicalContainer .element{
+.modal-content .technicalContainer .element{
 	flex: 1 1 50%
 }
 
-.content .technicalContainer .element h4{
+.modal-content .technicalContainer .element h4{
 	font-family: var(--bold);
 	font-size: 20px;
 	line-height: 150%;
 }
 
-.content .technicalContainer .element ul{
+.modal-content .technicalContainer .element ul{
 	font-family: var(--light);
 	font-size: 16px;
 	padding: 10px 20px;
 	line-height: 150%;
 }
 
-.content .technicalContainer .element ul li{
+.modal-content .technicalContainer .element ul li{
 	padding: 5px;
 	list-style-type: none;
 }
@@ -187,15 +187,15 @@ export default {
 }
 
 @media screen and (max-width: 1200px)  {
-	.content .technicalContainer{
+	.modal-content .technicalContainer{
 		flex-direction: column;
 	}
 
-	.content h3{
+	.modal-content h3{
 		font-size: 30px;
 	}
 
-	.content p{
+	.modal-content p{
 		font-size: 18px;
 		padding: 20px 0;
 	}

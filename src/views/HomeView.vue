@@ -7,6 +7,7 @@
   
   import Prestations from '@/components/Prestations.vue'; 
 import Realisations from '@/components/Realisations.vue';
+import Project from '@/components/Project.vue';
 
 </script>
 
@@ -23,4 +24,6 @@ import Realisations from '@/components/Realisations.vue';
 
     <Realisations></Realisations>
     <SeparationSection></SeparationSection>
+
+    <Project></Project>
 </template>
