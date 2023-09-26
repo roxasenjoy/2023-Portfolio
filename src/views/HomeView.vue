@@ -6,8 +6,9 @@
   import PersonnalInformation from '@/components/PersonnalInformation.vue';  
   
   import Prestations from '@/components/Prestations.vue'; 
-import Realisations from '@/components/Realisations.vue';
-import Project from '@/components/Project.vue';
+  import Realisations from '@/components/Realisations.vue';
+  import Project from '@/components/Project.vue';
+  import RecommandationsVue from '@/components/Recommandations.vue';
 
 </script>
 
@@ -26,4 +27,8 @@ import Project from '@/components/Project.vue';
     <SeparationSection></SeparationSection>
 
     <Project></Project>
+    <SeparationSection></SeparationSection>
+
+    <RecommandationsVue></RecommandationsVue>
+    <SeparationSection></SeparationSection>
 </template>

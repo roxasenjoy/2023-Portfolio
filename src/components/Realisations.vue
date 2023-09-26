@@ -10,6 +10,7 @@ export default{
             TM: 'TM',
             ZESTE: 'ZESTE',
             LCDC: 'LCDC',
+            RECIPES: 'RECIPES',
             modal: 0
             
         }
@@ -145,7 +146,6 @@ export default{
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit 
                             elementum lacinia. Donec quis molestie nibh. Interdum et malesuada 
                             fames ac ante ipsum primis in faucibus. Nulla dictum euismod magna,
-                            sed blandit sem facilisis non. Curabitur libero velit, dignissim eu 
                         </template>
 
                         <template #service-one>1</template>
@@ -171,81 +171,57 @@ export default{
         <div class="img-clip-block">
   			<div class="img-clip-block">
                 <div class="img-clip-row">
-                    <a class="img-clip-wrap titleContainer">
+                    <a class="img-clip-wrap">
                         <div class="overlay overlayContainer">
                             <div class="overlay-content titleContent">Projets & Réalisations</div>
                         </div>
                     </a>
 
-                    <a class="img-clip-wrap" @click="modal=1">
-                        <div class="overlay imageOverlay" :class="ACDGC">			
+                    <a class="img-clip-wrap titleContainer" @click="modal=1">
+                        <div class="overlay overlayContainer">
+                            <div class="overlay-content">Aux caves des grands cépages</div>
                         </div>
                     </a>
-                    <a class="img-clip-wrap" @click="modal=2">
-                        <div class="overlay imageOverlay" :class="TM">			
+                    <a class="img-clip-wrap titleContainer" @click="modal=2">
+                        <div class="overlay overlayContainer">
+                            <div class="overlay-content">Thomas MENUET</div>
                         </div>
                     </a>
                 </div>
                 
 
                 <div class="img-clip-row">
-                    <a class="img-clip-wrap" @click="modal=3">
-                        <div class="overlay imageOverlay" :class="ZESTE"></div>
-                    </a>
-
-                    <a class="img-clip-wrap" @click="modal=4"> 
-                        <div class="overlay imageOverlay" :class="LCDC">			
-                            <!-- <div class="overlay-content">{{LCDC}}</div> -->
+                    <a class="img-clip-wrap titleContainer" @click="modal=3">
+                        <div class="overlay overlayContainer">
+                            <div class="overlay-content">Zeste, cuisine du jardin</div>
                         </div>
                     </a>
-                        
+
+                    <a class="img-clip-wrap titleContainer" @click="modal=4"> 
+                        <div class="overlay overlayContainer">
+                            <div class="overlay-content">Les cerises du café</div>
+                        </div>
+                    </a>
                 </div>
+                
 
                 <div class="img-clip-row">
-                    <!-- <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
-                        <div class="overlay imageOverlay">
-                            <div class="overlay-content">IMAGE</div>			
-                        </div>
-                    </a>
 
-                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
-                        <div class="overlay imageOverlay">			
-                            <div class="overlay-content">IMAGE</div>
-                        </div>
-                    </a> -->
+                    <a href="#" class="img-clip-wrap containerDevis hideBorder">
+                    </a>
 
                     <a href="#" class="img-clip-wrap containerDevis">
                         <div class="overlay devisOverlay">			
-                            <div class="overlay-content devisContent">CRÉER VOTRE SITE INTERNET</div>
+                            <div class="overlay-content devisContent">AJOUTER VOTRE SITE INTERNET</div>
                         </div>
                     </a>
-                        
+
+                    <a class="img-clip-wrap titleContainer" @click="modal=5"> 
+                        <div class="overlay overlayContainer">
+                            <div class="overlay-content">Liste de recettes</div>
+                        </div>
+                    </a>
                 </div>
-
-                <!-- <div class="img-clip-row">
-                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
-                        <div class="overlay imageOverlay">
-                            <div class="overlay-content">IMAGE</div>			
-                        </div>
-                    </a>
-                        
-                </div>
-
-                <div class="img-clip-row">
-
-                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap">
-                        <div class="overlay imageOverlay">			
-                            <div class="overlay-content">IMAGE</div>
-                        </div>
-                    </a>
-
-                    <a href="https://stocksnap.io/photo/J633WD7BAR" class="img-clip-wrap containerDevis">
-                        <div class="overlay devisOverlay">			
-                            <div class="overlay-content devisContent">CRÉER VOTRE SITE INTERNET</div>
-                        </div>
-                    </a>
-                        
-                </div> -->
             </div> <!-- /img-clip-block -->
 
         </div>
@@ -254,23 +230,6 @@ export default{
 </template>
   
 <style scoped>
-
-
-.zesteBackground{
-    background-image: url('@/assets/images/portfolio/zeste.png');
-}
-
-.LCDCBackground{
-    background-image: url('@/assets/images/portfolio/LCDC.png');
-}
-
-.ACDGCBackground{
-    background-image: url('@/assets/images/portfolio/ACDGC.png');
-}
-
-.TMBackground{
-    background-image: url('@/assets/images/portfolio/zeste.png');
-}
 
 section{
     width: 100%;
@@ -286,7 +245,7 @@ section{
 }
 
 .img-clip-block {
-  font-family: 'Cuprum', sans-serif;
+  font-family: var(--normal);
   margin: 20px 0;
 }
 
@@ -298,7 +257,6 @@ section{
 .img-clip-row:first-of-type .img-clip-wrap {
     background-position: top;
     margin: -30px 10px -30px 10px;
-
 }
 
 .img-clip-row:nth-of-type(2) .img-clip-wrap:nth-of-type(odd) {
@@ -362,6 +320,11 @@ section{
 .containerDevis{
     background-color: initial;
 }
+
+.hideBorder{
+    opacity: 0;
+}
+
 .titleContainer::after,
 .containerDevis::after {
   aspect-ratio: 1;
@@ -408,6 +371,12 @@ section{
 
 .img-clip-img {
   display: block;
+}
+
+.titleContent{
+    color: var(--blue);
+    font-family: var(--bold) !important;
+    font-size: 30px;
 }
 
 
